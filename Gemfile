@@ -3,6 +3,7 @@ source "https://rubygems.org"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "cssbundling-rails"
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 2.1"
@@ -62,11 +63,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "minitest"
-  gem "rails-controller-testing" 
+  gem "rails-controller-testing"
   gem "minitest-reporters"
   gem "guard"
   gem "guard-minitest"
-
 end
 
 group :production do
