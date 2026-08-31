@@ -13,19 +13,20 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
-  end
-end
+    # Returns true if a test user is logged in.
+    def is_logged_in?
+    !session[:user_id].nil?
+    end
+
 
 class ActionDispatch::IntegrationTest
-  include Rails.application.routes.url_helpers
-
-  # Returns true if a test user is logged in.
-  def is_logged_in?
-    !session[:user_id].nil?
+  # Log in as a particular user.
+  def log_in_as(user, password: "password", remember_me: "1")
+    post login_path, params: { session: {
+      email: user.email,
+      password: password,
+      remember_me: remember_me } }
   end
-
-  # Assert that the user is logged in.
-  def assert_is_logged_in?
-    assert_not session[:user_id].nil?
+end
   end
 end
