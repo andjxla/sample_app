@@ -15,3 +15,17 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
+
+class ActionDispatch::IntegrationTest
+  include Rails.application.routes.url_helpers
+
+  # Returns true if a test user is logged in.
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
+
+  # Assert that the user is logged in.
+  def assert_is_logged_in?
+    assert_not session[:user_id].nil?
+  end
+end
