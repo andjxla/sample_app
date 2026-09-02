@@ -5,6 +5,8 @@ gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "jsbundling-rails"
 gem "bcrypt"
+gem "faker"
+gem "will_paginate"
 gem "cssbundling-rails"
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
