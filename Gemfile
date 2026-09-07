@@ -3,6 +3,8 @@ source "https://rubygems.org"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "image_processing"
+gem "active_storage_validations"
 gem "jsbundling-rails"
 gem "bcrypt"
 gem "faker"
@@ -75,4 +77,5 @@ end
 
 group :production do
   gem "pg"
+  gem "aws-sdk-s3", "1.199.0", require: false
 end
